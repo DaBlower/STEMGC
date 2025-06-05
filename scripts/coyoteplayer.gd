@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var coyote_time = 0.1
 @export var SPEED = 85.0
 @export var JUMP_VELOCITY = -300.0
 
@@ -11,8 +11,16 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+var coyote_timer: float=0 
+
+func enter() -> void:
+	.enter()
+	coyote_timer=coyote_time 
+
+func process(delta: float) -> BaseState:
+	coyote_timer-=delta
+func 
+   if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
