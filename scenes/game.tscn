@@ -177,6 +177,9 @@ tile_set = SubResource("TileSet_lbhrr")
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 z_index = 1
 position = Vector2(11, 33)
+coyote_time = null
+SPEED = null
+JUMP_VELOCITY = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)

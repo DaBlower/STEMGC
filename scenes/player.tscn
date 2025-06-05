@@ -162,6 +162,9 @@ height = 14.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
+coyote_time = null
+SPEED = null
+JUMP_VELOCITY = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
