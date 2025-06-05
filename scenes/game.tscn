@@ -175,12 +175,12 @@ tile_map_data = PackedByteArray("AAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAADAAMAAAAAAAA
 tile_set = SubResource("TileSet_lbhrr")
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(11, 23)
+z_index = 1
+position = Vector2(11, 33)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-2, -11)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="Platform" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(17, -8)
+position = Vector2(16, -7)
