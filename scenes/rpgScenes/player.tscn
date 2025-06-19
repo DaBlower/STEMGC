@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5bjjjy0nnm45"]
+
+[ext_resource type="Texture2D" uid="uid://b71jclonb7pg0" path="res://assests/sprites/roguelikeChar_transparent.png" id="1_b71qk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqu4r"]
+atlas = ExtResource("1_b71qk")
+region = Rect2(17, 136, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3cuk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqu4r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r3cuk")
+animation = &"idle"
