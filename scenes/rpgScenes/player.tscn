@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://c5bjjjy0nnm45"]
+
+[ext_resource type="Texture2D" uid="uid://dpjgcsbstacek" path="res://assests/sprites/adventurer/Idle/idle.png" id="1_b71qk"]
+[ext_resource type="Script" uid="uid://blnj6245qxfum" path="res://scenes/rpgScenes/player.gd" id="1_pqu4r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pqu4r"]
+radius = 6.0
+height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3cuk"]
+atlas = ExtResource("1_b71qk")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwvxo"]
+atlas = ExtResource("1_b71qk")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsvjp"]
+atlas = ExtResource("1_b71qk")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca4vi"]
+atlas = ExtResource("1_b71qk")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkat7"]
+atlas = ExtResource("1_b71qk")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh1na"]
+atlas = ExtResource("1_b71qk")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2mp0"]
+atlas = ExtResource("1_b71qk")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c772c"]
+atlas = ExtResource("1_b71qk")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fmyt4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3cuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwvxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsvjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca4vi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkat7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh1na")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2mp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c772c")
+}],
+"loop": true,
+"name": &"idle-forward",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_pqu4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_pqu4r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 2)
+sprite_frames = SubResource("SpriteFrames_fmyt4")
+animation = &"idle-forward"
+autoplay = "idle-forward"
+frame_progress = 0.401041
